@@ -4,13 +4,14 @@ import { ja } from 'date-fns/locale';
 
 export async function GET() {
   try {
+    console.log('Generating date...');
     const date = new Date();
-    // Format directly without timezone conversion since we're using server time
-    const formattedDate = format(date, 'yyyy年MM月dd日 HH:mm:ss', { locale: ja });
+    const formattedDate = format(date, 'yyyy年MM月dd日 HH時mm分ss秒', { locale: ja });
+    console.log('Current date:', date.toISOString());
     
     return NextResponse.json({ date: formattedDate });
   } catch (error) {
-    console.error('Date formatting error:', error);
-    return NextResponse.json({ error: 'Failed to format date' }, { status: 500 });
+    console.error('Detailed error:', error);
+    return NextResponse.json({ error: String(error) }, { status: 500 });
   }
 }
