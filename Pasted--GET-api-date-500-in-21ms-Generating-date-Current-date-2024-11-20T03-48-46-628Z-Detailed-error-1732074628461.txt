@@ -1,0 +1,46 @@
+
+ GET /api/date 500 in 21ms
+Generating date...
+Current date: 2024-11-20T03:48:46.628Z
+Detailed error: TypeError: (0 , date_fns_tz__WEBPACK_IMPORTED_MODULE_1__.utcToZonedTime) is not a function
+    at GET (webpack-internal:///(rsc)/./app/api/date/route.ts:16:86)
+    at /home/runner/TestProject/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:55837
+    at /home/runner/TestProject/node_modules/next/dist/server/lib/trace/tracer.js:140:36
+    at NoopContextManager.with (/home/runner/TestProject/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/home/runner/TestProject/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NoopTracer.startActiveSpan (/home/runner/TestProject/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+    at ProxyTracer.startActiveSpan (/home/runner/TestProject/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)
+    at /home/runner/TestProject/node_modules/next/dist/server/lib/trace/tracer.js:122:103
+    at NoopContextManager.with (/home/runner/TestProject/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/home/runner/TestProject/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NextTracerImpl.trace (/home/runner/TestProject/node_modules/next/dist/server/lib/trace/tracer.js:122:28)
+    at /home/runner/TestProject/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:48572
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at Object.wrap (/home/runner/TestProject/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:40957)
+    at /home/runner/TestProject/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:47148
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at Object.wrap (/home/runner/TestProject/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:38292)
+    at /home/runner/TestProject/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:47110
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at eO.execute (/home/runner/TestProject/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46557)
+    at eO.handle (/home/runner/TestProject/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:57176)
+    at doRender (/home/runner/TestProject/node_modules/next/dist/server/base-server.js:1353:60)
+    at cacheEntry.responseCache.get.routeKind (/home/runner/TestProject/node_modules/next/dist/server/base-server.js:1575:34)
+    at ResponseCache.get (/home/runner/TestProject/node_modules/next/dist/server/response-cache/index.js:49:26)
+    at DevServer.renderToResponseWithComponentsImpl (/home/runner/TestProject/node_modules/next/dist/server/base-server.js:1483:53)
+    at /home/runner/TestProject/node_modules/next/dist/server/base-server.js:1003:121
+    at NextTracerImpl.trace (/home/runner/TestProject/node_modules/next/dist/server/lib/trace/tracer.js:105:20)
+    at DevServer.renderToResponseWithComponents (/home/runner/TestProject/node_modules/next/dist/server/base-server.js:1003:41)
+    at DevServer.renderPageComponent (/home/runner/TestProject/node_modules/next/dist/server/base-server.js:1911:35)
+    at async DevServer.renderToResponseImpl (/home/runner/TestProject/node_modules/next/dist/server/base-server.js:1949:32)
+    at async DevServer.pipeImpl (/home/runner/TestProject/node_modules/next/dist/server/base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/home/runner/TestProject/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/home/runner/TestProject/node_modules/next/dist/server/base-server.js:817:17)
+    at async /home/runner/TestProject/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/home/runner/TestProject/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/home/runner/TestProject/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/home/runner/TestProject/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/home/runner/TestProject/node_modules/next/dist/server/lib/router-server.js:350:24)
+    at async requestHandlerImpl (/home/runner/TestProject/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/home/runner/TestProject/node_modules/next/dist/server/lib/start-server.js:141:13)
+ GET /api/date 500 in 27ms

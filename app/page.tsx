@@ -7,8 +7,11 @@ export default function Home() {
   useEffect(() => {
     const fetchDate = async () => {
       try {
+        console.log('Attempting to fetch date...');
         const response = await fetch('/api/date');
+        console.log('Response status:', response.status);
         const data = await response.json();
+        console.log('Received data:', data);
         setJapaneseDate(data.date);
       } catch (error) {
         console.error('Failed to fetch date:', error);

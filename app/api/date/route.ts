@@ -1,26 +1,16 @@
 import { NextResponse } from 'next/server';
 import { format } from 'date-fns';
-import { utcToZonedTime } from 'date-fns-tz';
+import { ja } from 'date-fns/locale';
 
 export async function GET() {
   try {
     const date = new Date();
-    const tokyoDate = utcToZonedTime(date, 'Asia/Tokyo');
-    const formattedDate = format(tokyoDate, 'yyyy年MM月dd日');
+    // Format directly without timezone conversion since we're using server time
+    const formattedDate = format(date, 'yyyy年MM月dd日', { locale: ja });
     
-    return new NextResponse(JSON.stringify({ date: formattedDate }), {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    return NextResponse.json({ date: formattedDate });
   } catch (error) {
-    console.error('Error formatting date:', error);
-    return new NextResponse(JSON.stringify({ error: 'Failed to format date' }), {
-      status: 500,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    console.error('Date formatting error:', error);
+    return NextResponse.json({ error: 'Failed to format date' }, { status: 500 });
   }
 }
