@@ -7,19 +7,23 @@ export default function Home() {
   useEffect(() => {
     const fetchDate = async () => {
       try {
-        console.log('Attempting to fetch date...');
         const response = await fetch('/api/date');
-        console.log('Response status:', response.status);
         const data = await response.json();
-        console.log('Received data:', data);
         setJapaneseDate(data.date);
       } catch (error) {
         console.error('Failed to fetch date:', error);
       }
     };
 
+    // Fetch immediately
     fetchDate();
-  }, []);
+    
+    // Then fetch every second
+    const interval = setInterval(fetchDate, 1000);
+    
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, []); // Empty dependency array
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 gap-4">
